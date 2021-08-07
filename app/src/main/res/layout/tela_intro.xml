@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/image_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_420sdp"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/dots_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_container"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal" />
+
+    <Button
+        android:id="@+id/bt_iniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dots_container"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@color/primary"
+        android:backgroundTint="#FFFFFF"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/iniciar"
+        android:textColor="@color/text_color_4" />
+
+</RelativeLayout>
