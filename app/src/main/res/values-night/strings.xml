@@ -4,20 +4,20 @@
     <string name="iniciar">Iniciar</string>
     <string name="search">Digite o assunto de seu interesse</string>
     <string name="searchbar_text">Digite o assunto de seu interesse</string>
-    <string name="text_grupo_1">Elementos para Elaboração <br></br> de um Trabalho Científico</string>
+    <string name="text_grupo_1">Elementos para Elaboração  de um Trabalho Científico</string>
     <string name="text_cat_1">Escolha e delimitação do tema</string>
     <string name="text_cat_2">Formulação do problema ou pergunta de pesquisa</string>
 
     <string name="text_grupo_2">Recursos de Apoio à Escrita Científica</string>
     <string name="text_cat_3">Tipos de Pesquisas</string>
     <string name="text_cat_4">Definição dos Sujeitos da Pesquisa</string>
-    <string name="text_grupo_3">Softwares de Apoio à Coleta<br></br> de Dados de Pesquisa Científica</string>
+    <string name="text_grupo_3">Softwares de Apoio à Coleta de Dados de Pesquisa Científica</string>
     <string name="text_cat_5">Entrevista</string>
     <string name="text_cat_6">Observação</string>
     <string name="text_grupo_4">Normas Bibliogáficas</string>
     <string name="text_cat_7">Estilo Vancouver</string>
     <string name="text_cat_8">Elaboração de Referências Padrão ABNT</string>
-    <string name="text_cat_9">Legislação<br></br>(Direitos Autorais e Plágio)</string>
+    <string name="text_cat_9">Legislação(Direitos Autorais e Plágio)</string>
     <string name="text_grupo_5">Ética na Pesquisa</string>
-    <string name="text_cat_10">Copyright e <br></br>Copyleft</string>
+    <string name="text_cat_10">Copyright e Copyleft</string>
 </resources>
