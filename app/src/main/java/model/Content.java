@@ -1,7 +1,5 @@
 package model;
 
-import android.util.Log;
-
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;

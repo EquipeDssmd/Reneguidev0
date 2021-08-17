@@ -6,11 +6,13 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tela_principal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/_14sdp">
 
         <androidx.appcompat.widget.SearchView
+
             android:id="@+id/searchbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,6 +33,7 @@
             />
 
         <ScrollView
+            android:id="@+id/scroll_vert"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:overScrollMode="always"
@@ -557,8 +560,16 @@
                         app:layout_constraintTop_toBottomOf="@id/cat_10"
                         android:layout_marginTop="@dimen/_14sdp"
                         />
+
+
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </ScrollView>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 </RelativeLayout>
