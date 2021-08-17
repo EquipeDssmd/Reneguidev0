@@ -3,9 +3,9 @@ package model;
 import android.util.Log;
 
 public class Article {
-    private String title;
+    private String title, infographic;
     public Article() {}
-    public Article(String title){
+    public Article(String title, String infographic){
         this.title = title;
         Log.d("TAG", "onCreate: ARTICLE TITLE = " + title);
 

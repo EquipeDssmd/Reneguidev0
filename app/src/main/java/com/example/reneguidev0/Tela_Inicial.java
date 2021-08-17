@@ -21,7 +21,7 @@ import model.Content;
 public class Tela_Inicial  extends AppCompatActivity {
 
     FirebaseFirestore storage;
-    private static ArrayList<Content> contentList = new ArrayList<>();
+    ArrayList<Content> contentList = new ArrayList<>();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +29,12 @@ public class Tela_Inicial  extends AppCompatActivity {
 
         storage = FirebaseFirestore.getInstance();
         fetchData();
+    }
+
+    public void setContentList(List<Content> contents){
+        contentList.addAll(contents);
+        Toast.makeText(getApplicationContext(), contentList.get(0).getTitle(), Toast.LENGTH_LONG).show();
+
     }
 
     public void fetchData(){
@@ -43,9 +49,7 @@ public class Tela_Inicial  extends AppCompatActivity {
                             // of objects directly! No need to fetch each
                             // document.
                             List<Content> contents = documentSnapshots.toObjects(Content.class);
-
-                            // Add all to your list
-                            contentList.addAll(contents);
+                            setContentList(contents);
                         }
                     }
                 })
