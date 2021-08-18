@@ -27,6 +27,7 @@ public class Tela_Inicial  extends AppCompatActivity {
     FirebaseFirestore storage;
     private static ArrayList<Content> contentList = new ArrayList<>();
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_inicial);
