@@ -1,14 +1,13 @@
 package com.example.reneguidev0;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -21,46 +20,32 @@ import model.Content;
 
 
 public class Tela_Inicial  extends AppCompatActivity {
-    CardView cat_1,cat_2,cat_3,cat_4,cat_5,cat_6,cat_7,cat_8,cat_9,cat_10;
-
 
     FirebaseFirestore storage;
-    private static ArrayList<Content> contentList = new ArrayList<>();
+    ArrayList<Content> contentList = new ArrayList<Content>();
+    RecyclerView recyclerview;
+    ContentRecyclerAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_inicial);
-        cat_1 = findViewById(R.id.cat_1);
-        cat_2 = findViewById(R.id.cat_2);
-        cat_3 = findViewById(R.id.cat_3);
 
-
-        //listener do click
-        cat_1.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), Tela_Pdf.class);
-            startActivity(intent);
-
-        });
-
-        cat_2.setOnClickListener(v -> {
-            Toast.makeText(getApplicationContext(), "Clicou categoria 2!", Toast.LENGTH_LONG).show();
-
-        });
-
-        cat_3.setOnClickListener(v -> {
-            Toast.makeText(getApplicationContext(), "Clicou categoria 3!", Toast.LENGTH_LONG).show();
-
-        });
-
-
-
-
+        recyclerview = findViewById(R.id.recycleview);
+        recyclerview.setHasFixedSize(true);
+        recyclerview.setLayoutManager(new LinearLayoutManager(this));
         storage = FirebaseFirestore.getInstance();
         fetchData();
     }
 
+    public void setContentList(List<Content> contents){
+        contentList.addAll(contents);
+        Toast.makeText(getApplicationContext(), contentList.get(0).getTitle(), Toast.LENGTH_LONG).show();
+        adapter = new ContentRecyclerAdapter(this, contentList);
+        recyclerview.setAdapter(adapter);
 
+    }
     public void fetchData(){
         storage.collection("contents").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -73,9 +58,7 @@ public class Tela_Inicial  extends AppCompatActivity {
                             // of objects directly! No need to fetch each
                             // document.
                             List<Content> contents = documentSnapshots.toObjects(Content.class);
-
-                            // Add all to your list
-                            contentList.addAll(contents);
+                            setContentList(contents);
                         }
                     }
                 })
