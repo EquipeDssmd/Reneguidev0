@@ -41,7 +41,7 @@ public class ContentRecyclerAdapter extends RecyclerView.Adapter<ContentRecycler
 
         holder.articlesview.setHasFixedSize(true);
         holder.articlesview.setLayoutManager(new LinearLayoutManager(this.context));
-        adapter = new ArticleRecyclerAdapter(this.context, content.getArticles());
+        adapter = new ArticleRecyclerAdapter(this.context, content.getArticles(), content.getColor());
         holder.articlesview.setAdapter(adapter);
     }
 

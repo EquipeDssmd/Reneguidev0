@@ -1,7 +1,5 @@
 package model;
 
-import android.util.Log;
-
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -20,6 +18,11 @@ public class Content {
     public String getTitle() {
         return this.title;
     }
+
+    public String getColor() {
+        return this.color;
+    }
+
 
     public ArrayList<Article> getArticles() {
         return this.articles;

@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -28,9 +27,11 @@ public class Tela_Inicial  extends AppCompatActivity {
     ContentRecyclerAdapter adapter;
 
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_inicial);
+
         recyclerview = findViewById(R.id.recycleview);
         recyclerview.setHasFixedSize(true);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
@@ -45,7 +46,6 @@ public class Tela_Inicial  extends AppCompatActivity {
         recyclerview.setAdapter(adapter);
 
     }
-
     public void fetchData(){
         storage.collection("contents").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
