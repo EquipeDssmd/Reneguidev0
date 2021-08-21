@@ -38,16 +38,10 @@
 
         </LinearLayout>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cat_1"
-            android:layout_width="@dimen/_120sdp"
-            android:layout_height="@dimen/_82sdp"
-            app:cardBackgroundColor="@color/primary"
-            app:cardCornerRadius="@dimen/_16sdp"
-            tools:layout_editor_absoluteX="351dp"
-            tools:layout_editor_absoluteY="34dp">
-
-        </com.google.android.material.card.MaterialCardView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/articlesview"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

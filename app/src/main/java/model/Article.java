@@ -7,6 +7,7 @@ public class Article {
     public Article() {}
     public Article(String title, String infographic){
         this.title = title;
+        this.infographic = infographic;
         Log.d("TAG", "onCreate: ARTICLE TITLE = " + title);
 
     }

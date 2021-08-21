@@ -25,7 +25,7 @@ public class Tela_Inicial  extends AppCompatActivity {
     FirebaseFirestore storage;
     ArrayList<Content> contentList = new ArrayList<Content>();
     RecyclerView recyclerview;
-    CustomRecyclerAdapter adapter;
+    ContentRecyclerAdapter adapter;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class Tela_Inicial  extends AppCompatActivity {
     public void setContentList(List<Content> contents){
         contentList.addAll(contents);
         Toast.makeText(getApplicationContext(), contentList.get(0).getTitle(), Toast.LENGTH_LONG).show();
-        adapter = new CustomRecyclerAdapter(this, contentList);
+        adapter = new ContentRecyclerAdapter(this, contentList);
         recyclerview.setAdapter(adapter);
 
     }
