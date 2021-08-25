@@ -21,4 +21,13 @@
     <string name="text_grupo_5">Ética na Pesquisa</string>
     <string name="text_cat_10">Copyright e Copyleft</string>
     <string name="sobre_text">reneguide</string>
+    <string name="bem_vindo">Bem-Vindo!</string>
+    <string name="o_guia">O guia de bolso para metodologia científica</string>
+    <string name="acesso_rapido">Acesso rápido</string>
+    <string name="o_reneguide">O Reneguide tem como objetivo oferecer conteúdos de metodologia científica de modo simples.</string>
+    <string name="conteudos">Conteúdos Diversos</string>
+    <string name="metodologia">O Reneguide tem como objetivo oferecer conteúdos de metodologia científica de modo simples.</string>
+    <string name="Home">home</string>
+    <string name="Sobre">sobre</string>
+    <string name="Help">help</string>
 </resources>

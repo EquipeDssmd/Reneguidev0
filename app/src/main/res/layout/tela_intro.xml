@@ -10,8 +10,9 @@
         android:id="@+id/image_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_420sdp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true">
 
+    </androidx.viewpager2.widget.ViewPager2>
     <LinearLayout
         android:id="@+id/dots_container"
         android:layout_width="match_parent"
@@ -24,17 +25,16 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bt_iniciar"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_200sdp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/dots_container"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_12sdp"
-        android:background="@color/primary"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:background="@drawable/round_shape"
+        android:fontFamily="@font/montserrat_bold"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/iniciar"
-        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/auxiliar_2"
         android:textSize="@dimen/_12ssp"
-        android:textColor="@color/text_color_4"
-        app:cornerRadius="@dimen/_16sdp" />
-
+        />
 </RelativeLayout>
