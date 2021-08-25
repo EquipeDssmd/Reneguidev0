@@ -1,15 +1,17 @@
 package com.example.reneguidev0;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager2.widget.ViewPager2;
+
+import com.example.reneguidev0.R.color;
+import com.example.reneguidev0.R.id;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,27 +21,27 @@ public class MainActivity extends AppCompatActivity {
     TextView[] dots;
     LinearLayout layout;
     Button button;
+    Fragment_Controller frag;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_intro);
 
-        imageContainer = findViewById(R.id.image_container);
-        layout = findViewById(R.id.dots_container);
-        button = findViewById(R.id.bt_iniciar);
+        imageContainer = findViewById(id.image_container);
+        layout = findViewById(id.dots_container);
+        button = findViewById(id.bt_iniciar);
+        FragmentManager fm = getSupportFragmentManager();
+        frag= new Fragment_Controller(fm,getLifecycle());
+        imageContainer.setAdapter(frag);
 
 
         dots = new TextView[3];
 
         list = new int[3];
-        list[0] = getResources().getColor(R.color.primary);
-        list[1] = getResources().getColor(R.color.cat_1);
-        list[2] = getResources().getColor(R.color.cat_2);
 
 
-        adapter = new slide_intro(list);
-        imageContainer.setAdapter(adapter);
 
         setIndicators();
 
@@ -63,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
     private void selectedDots(int position) {
         for (int i = 0; i < dots.length; i++) {
             if (i == position) {
-                dots[i].setTextColor(getColor(R.color.primary));
+                dots[i].setTextColor(getColor(color.primary));
             } else {
-                dots[i].setTextColor(getResources().getColor(R.color.auxiliar_2));
+                dots[i].setTextColor(getResources().getColor(color.auxiliar_2));
             }
         }
     }

@@ -17,10 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/auxiliar_2">
+            android:background="@drawable/round_shape"
+            android:backgroundTint="@color/auxiliar_2"
+            app:iconifiedByDefault="false"
+            app:searchIcon="@drawable/ic_search"
+            android:foregroundTint="@color/primary"
+            app:defaultQueryHint="@string/searchbar_text">
 
         </androidx.appcompat.widget.SearchView>
-
         <View
             android:id="@+id/divider1"
             android:layout_width="match_parent"
@@ -38,8 +42,10 @@
             android:layout_height="0dp"
             android:overScrollMode="always"
             android:scrollbars="vertical"
+            android:layout_marginBottom="@dimen/_50sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider1"
-            app:layout_constraintBottom_toBottomOf="parent" >
+            tools:layout_editor_absoluteX="18dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleview"
@@ -51,6 +57,9 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+    <include layout="@layout/navibutton"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
 
 </RelativeLayout>

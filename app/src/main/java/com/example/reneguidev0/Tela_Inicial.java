@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -25,19 +26,41 @@ public class Tela_Inicial  extends AppCompatActivity {
     ArrayList<Content> contentList = new ArrayList<Content>();
     RecyclerView recyclerview;
     ContentRecyclerAdapter adapter;
+    SearchView search_button;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_inicial);
+        search_button = findViewById(R.id.searchbar);
 
         recyclerview = findViewById(R.id.recycleview);
         recyclerview.setHasFixedSize(true);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         storage = FirebaseFirestore.getInstance();
         fetchData();
+
+
     }
+
+    SearchView.OnQueryTextListener queryTextListener= new SearchView.OnQueryTextListener(){
+
+        @Override
+        public boolean onQueryTextSubmit(String query) {
+            return true;
+        }
+
+        @Override
+        public boolean onQueryTextChange(String newText) {
+            Toast.makeText(getApplicationContext(),contentList.get(0).getTitle(),Toast.LENGTH_LONG).show();
+
+
+
+
+            return true;
+        }
+    };
 
     public void setContentList(List<Content> contents){
         contentList.addAll(contents);
