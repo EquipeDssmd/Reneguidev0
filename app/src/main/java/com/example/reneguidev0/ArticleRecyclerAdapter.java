@@ -37,6 +37,13 @@ public class ArticleRecyclerAdapter extends RecyclerView.Adapter<ArticleRecycler
         Article article = list.get(position);
         holder.title.setText(article.getTitle());
         holder.card.setCardBackgroundColor(Color.parseColor(color));
+
+        holder.card.setOnClickListener(v -> {
+            Intent intent = new Intent(holder.itemView.getContext(), Tela_Pdf.class);
+            intent.putExtra("pdfUrl", list.get(position).getInfographic());
+            holder.itemView.getContext().startActivity(intent);
+
+        });
     }
 
     @Override
@@ -54,11 +61,6 @@ public class ArticleRecyclerAdapter extends RecyclerView.Adapter<ArticleRecycler
             title = itemView.findViewById(R.id.articleTitle);
             card = itemView.findViewById(R.id.card);
 
-            card.setOnClickListener(v -> {
-                Intent intent = new Intent(itemView.getContext(), Tela_Pdf.class);
-                itemView.getContext().startActivity(intent);
-
-            });
         }
     }
 }

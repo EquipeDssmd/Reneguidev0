@@ -15,4 +15,7 @@ public class Article {
     public String getTitle() {
         return this.title;
     }
+    public String getInfographic() {
+        return this.infographic;
+    }
 }
