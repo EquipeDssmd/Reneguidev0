@@ -20,16 +20,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:padding="@dimen/_14sdp">
+        android:padding="@dimen/_8sdp">
 
         <TextView
             android:id="@+id/articleTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:text="kkkk"
+            android:textAlignment="gravity"
             android:textColor="@color/auxiliar_1"
-            android:textSize="8sp"
+            android:textSize="11sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

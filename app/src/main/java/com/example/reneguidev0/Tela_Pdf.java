@@ -2,6 +2,7 @@ package com.example.reneguidev0;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +15,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Tela_Pdf  extends AppCompatActivity {
-    private static final String TAG = Tela_Pdf.class.getSimpleName();
     private PDFView pdfView;
     Integer pageNumber = 0;
     private String url;
@@ -26,7 +26,6 @@ public class Tela_Pdf  extends AppCompatActivity {
 
         pdfView = (PDFView) findViewById(R.id.pdfview);
         url = getIntent().getStringExtra("pdfUrl");
-        //url = "https://www.reportlab.com/docs/reportlab-reference.pdf";
         new Tela_Pdf.PdfDownload().execute(url);
     }
 
@@ -50,6 +49,10 @@ public class Tela_Pdf  extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(InputStream inputStream) {
+            if (inputStream == null){
+                Toast.makeText(getApplicationContext(), "não foi possivel acessar o pdf!", Toast.LENGTH_LONG).show();
+                //finish();
+            }
             pdfView.fromStream(inputStream)
                     .defaultPage(pageNumber)
                     .enableSwipe(true)

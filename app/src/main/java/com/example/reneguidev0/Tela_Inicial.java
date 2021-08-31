@@ -69,12 +69,13 @@ public class Tela_Inicial  extends AppCompatActivity {
         @Override
         public boolean onQueryTextChange(String newText) {
             search_adapter.getFilter().filter(newText);
-            //Toast.makeText(getApplicationContext(),contentList.get(0).getTitle(),Toast.LENGTH_LONG).show();
             return true;
         }
     };
 
     public void setContentList(List<Content> contents){
+        Toast.makeText(getApplicationContext(), "conteúdos carregados!", Toast.LENGTH_LONG).show();
+
         contentList.addAll(contents);
         for (int i = 0; i < contentList.size(); i++) {
             ArrayList<Article> articles = contentList.get(i).getArticles();
