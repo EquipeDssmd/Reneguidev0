@@ -53,7 +53,7 @@ public class Tela_Pdf  extends AppCompatActivity {
             pdfView.fromStream(inputStream)
                     .defaultPage(pageNumber)
                     .enableSwipe(true)
-                    .swipeHorizontal(true)
+                    .swipeHorizontal(false)
                     .enableAnnotationRendering(true)
                     .load();
         }

@@ -29,7 +29,7 @@ public class ArticleSearchRecyclerAdapter extends RecyclerView.Adapter<ArticleSe
     ArrayList<Article> list_filtered;
     String color;
 
-    public ArticleSearchRecyclerAdapter(Context context, ArrayList<Article> list, String color) {
+    public ArticleSearchRecyclerAdapter(Context context, ArrayList<Article> list) {
         this.context = context;
         this.list = list;
         this.list_filtered = new ArrayList<>(list);
@@ -48,7 +48,7 @@ public class ArticleSearchRecyclerAdapter extends RecyclerView.Adapter<ArticleSe
         Article article = list_filtered.get(position);
         holder.title.setText(article.getTitle());
 
-        holder.card.setCardBackgroundColor(Color.parseColor(color));
+        holder.card.setCardBackgroundColor(Color.parseColor(article.getColor()));
 
         holder.card.setOnClickListener(v -> {
             Intent intent = new Intent(holder.itemView.getContext(), Tela_Pdf.class);

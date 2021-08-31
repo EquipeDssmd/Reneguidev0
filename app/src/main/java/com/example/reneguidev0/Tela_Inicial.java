@@ -77,11 +77,14 @@ public class Tela_Inicial  extends AppCompatActivity {
     public void setContentList(List<Content> contents){
         contentList.addAll(contents);
         for (int i = 0; i < contentList.size(); i++) {
+            ArrayList<Article> articles = contentList.get(i).getArticles();
+            for (Article article : articles) {
+                article.setColor(contentList.get(i).getColor());
+            }
             allArticlesList.addAll(contentList.get(i).getArticles());
         }
-        Toast.makeText(getApplicationContext(), String.valueOf(allArticlesList.size()), Toast.LENGTH_LONG).show();
         adapter = new ContentRecyclerAdapter(this, contentList);
-        search_adapter = new ArticleSearchRecyclerAdapter(this, allArticlesList, "#ff0000");
+        search_adapter = new ArticleSearchRecyclerAdapter(this, allArticlesList);
         recyclerview.setAdapter(adapter);
         recycler_search_view.setAdapter(search_adapter);
 
