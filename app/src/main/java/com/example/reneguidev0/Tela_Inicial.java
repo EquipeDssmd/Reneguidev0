@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -17,6 +18,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Article;
 import model.Content;
 
 
@@ -24,9 +26,13 @@ public class Tela_Inicial  extends AppCompatActivity {
 
     FirebaseFirestore storage;
     ArrayList<Content> contentList = new ArrayList<Content>();
+    ArrayList<Article> allArticlesList = new ArrayList<Article>();
     RecyclerView recyclerview;
+    RecyclerView recycler_search_view;
     ContentRecyclerAdapter adapter;
+    ArticleSearchRecyclerAdapter search_adapter;
     SearchView search_button;
+
 
 
     @Override
@@ -34,10 +40,19 @@ public class Tela_Inicial  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_inicial);
         search_button = findViewById(R.id.searchbar);
+        search_button.setOnQueryTextListener(queryTextListener);
 
+        // recyclerview dos conteúdos
         recyclerview = findViewById(R.id.recycleview);
         recyclerview.setHasFixedSize(true);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
+
+        // recyclerview dos conteúdos da pesquisa
+        recycler_search_view = findViewById(R.id.recycler_search_view);
+        recycler_search_view.setHasFixedSize(true);
+
+
+        recycler_search_view.setLayoutManager(new GridLayoutManager(this, 2));
         storage = FirebaseFirestore.getInstance();
         fetchData();
 
@@ -53,22 +68,25 @@ public class Tela_Inicial  extends AppCompatActivity {
 
         @Override
         public boolean onQueryTextChange(String newText) {
-            Toast.makeText(getApplicationContext(),contentList.get(0).getTitle(),Toast.LENGTH_LONG).show();
-
-
-
-
+            search_adapter.getFilter().filter(newText);
+            //Toast.makeText(getApplicationContext(),contentList.get(0).getTitle(),Toast.LENGTH_LONG).show();
             return true;
         }
     };
 
     public void setContentList(List<Content> contents){
         contentList.addAll(contents);
-        Toast.makeText(getApplicationContext(), contentList.get(0).getTitle(), Toast.LENGTH_LONG).show();
+        for (int i = 0; i < contentList.size(); i++) {
+            allArticlesList.addAll(contentList.get(i).getArticles());
+        }
+        Toast.makeText(getApplicationContext(), String.valueOf(allArticlesList.size()), Toast.LENGTH_LONG).show();
         adapter = new ContentRecyclerAdapter(this, contentList);
+        search_adapter = new ArticleSearchRecyclerAdapter(this, allArticlesList, "#ff0000");
         recyclerview.setAdapter(adapter);
+        recycler_search_view.setAdapter(search_adapter);
 
     }
+
     public void fetchData(){
         storage.collection("contents").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {

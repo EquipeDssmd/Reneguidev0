@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation = "horizontal" android:layout_width="match_parent"
+    android:weightSum =" 1"
+    android:layout_height="wrap_content">
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/card"
+    android:layout_width="@dimen/_120sdp"
+    android:layout_height="@dimen/_30sdp"
+    android:layout_marginStart="@dimen/_16sdp"
+    android:layout_marginTop="@dimen/_16sdp"
+    android:layout_marginEnd="@dimen/_16sdp"
+    app:cardBackgroundColor="@color/cat_2"
+    app:cardCornerRadius="@dimen/_16sdp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:padding="@dimen/_14sdp">
+
+        <TextView
+            android:id="@+id/articleTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="kkkk"
+            android:textColor="@color/auxiliar_1"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
+</LinearLayout>
