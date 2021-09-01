@@ -9,10 +9,11 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/image_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_420sdp"
+        android:layout_height="@dimen/_500sdp"
         android:layout_centerHorizontal="true">
 
     </androidx.viewpager2.widget.ViewPager2>
+
     <LinearLayout
         android:id="@+id/dots_container"
         android:layout_width="match_parent"
