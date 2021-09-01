@@ -16,15 +16,22 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/_14sdp">
+        android:padding="@dimen/_14sdp"
+        >
 
         <TextView
             android:id="@+id/articleTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_21sdp"
             android:fontFamily="@font/montserrat"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/_16ssp"
             android:textColor="@color/auxiliar_1"
-            android:textSize="@dimen/_10ssp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="@dimen/_16ssp"
+            android:autoSizeMinTextSize="@dimen/_11ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -1,15 +1,19 @@
 package com.example.reneguidev0;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -31,7 +35,12 @@ public class Tela_Inicial  extends AppCompatActivity {
     RecyclerView recycler_search_view;
     ContentRecyclerAdapter adapter;
     ArticleSearchRecyclerAdapter search_adapter;
+
     SearchView search_button;
+
+
+    ImageView bt_home, bt_help;
+    CardView btSobre;
 
 
 
@@ -52,9 +61,39 @@ public class Tela_Inicial  extends AppCompatActivity {
         recycler_search_view.setHasFixedSize(true);
 
 
+
         recycler_search_view.setLayoutManager(new GridLayoutManager(this, 2));
         storage = FirebaseFirestore.getInstance();
         fetchData();
+
+
+
+
+        bt_home = findViewById(R.id.homebutton);
+        bt_home.setPressed(true);
+        bt_home.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Tela_Inicial.class);
+            startActivity(intent);
+
+
+        });
+
+        btSobre = findViewById(R.id.bt_sobre);
+        btSobre.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Tela_Sobre.class);
+            startActivity(intent);
+
+
+        });
+
+        bt_help = findViewById(R.id.helpbutton);
+        bt_help.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Tela_Help.class);
+            startActivity(intent);
+
+
+        });
+
 
 
     }
@@ -114,4 +153,7 @@ public class Tela_Inicial  extends AppCompatActivity {
                     }
                 });
     }
+
+
+
 }

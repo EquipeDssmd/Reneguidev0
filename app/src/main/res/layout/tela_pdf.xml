@@ -8,6 +8,7 @@
         android:id="@+id/pdfview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_50sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -15,11 +16,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
+
     </com.github.barteksc.pdfviewer.PDFView>
 
     <include layout="@layout/navibutton"
         android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_50sdp"
         android:layout_width="match_parent"/>
 
 </RelativeLayout>

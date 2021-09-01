@@ -32,15 +32,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#90F6EBEB"
+            android:layout_marginTop="@dimen/_16sdp"
             app:layout_constraintBottom_toTopOf="@+id/divider1"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/searchbar" />
 
         <View
             android:id="@+id/divider1"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             android:background="?android:attr/listDivider"
             app:layout_constraintTop_toBottomOf="@id/recycler_search_view"
             tools:layout_editor_absoluteX="375dp" />
@@ -66,9 +67,10 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <include layout="@layout/navibutton"
-        android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"/>
+    <include
+        layout="@layout/navibutton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

@@ -39,5 +39,31 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="sobre_tela">Sobre</string>
+    <string name="simbolo_description">Símbolo do aplicativo reneguide</string>
+    <string name="app_sobre_text">Diante das atividades acadêmicas e da correria diária, existe a necessidade de consultas rápidas e remotas aos conteúdos buscados. <br/> O reneguide, chega com o intuito de fomentar essa lacuna de maneira prática e objetiva. Porém, ampliando o conteúdo acessado para quem deseje se aprofundar nas temáticas abordadas.</string>
+    <string name="colaboradores">Colaboradores</string>
+    <string name="andr_a_soares">Andréa Soares</string>
+    <string name="coordenadora_e_idealizadora">Coordenadora e Idealizadora</string>
+    <string name="carlos_humberto">Carlos Humberto</string>
+    <string name="designer">Designer</string>
+    <string name="morgana_ramos">Morgana Ramos</string>
+    <string name="pesquisadora">Pesquisadora</string>
+    <string name="kaytiane_costa">Kaytiane Costa</string>
+    <string name="colaborador_especialista">Colaboradora Especialista</string>
+    <string name="luan_mendes">Luan Mendes</string>
+    <string name="monitor_de_metodologia_cient_fica">Monitor de Metodologia Científica</string>
+    <string name="laiana_ferreira">Laiana Ferreira</string>
+    <string name="colaboradora">Colaboradora</string>
+    <string name="paula_pinheiro">Paula Pinheiro</string>
+    <string name="pesquisadora_colaboradora">Pesquisadora colaboradora</string>
+    <string name="paulo_jefferson">Paulo Jefferson</string>
+    <string name="colaborador_especialista_jornalista">Colaborador Especialista <br/>Jornalista</string>
+    <string name="ajuda">Ajuda</string>
+    <string name="ajuda_texto1">O reneguide tem como objetivo principal servir como um guia de bolso para alunos de metodologia científica ou que estão em produção de trabalhos de conclusão de curso. <br/> O conteúdo é dividido em eixos temáticos, apresentados em uma ordem criteriosamente pensada para o desenvolvimento do trabalho de pesquisa científica.<br/> Os eixos temáticos são formados por diversos subtemas, onde o aluno pode consultar infográficos para seu estudo como mostra a imagem abaixo. É possível navegar entrar eles por rolagem horizontal das caixas.</string>
+    <string name="eixo_texto">Os conteúdos são divididos em eixos temáticos</string>
+    <string name="pesquisa">Pesquisa</string>
+    <string name="howtosearch_text">Na barra de pesquisa, localizada no topo da tela, é possível fazer uma busca rápida por conteúdos do seu interesse. <br/>Para facilitar a busca os subtemas relacionados são apresentados em blocos de mesma cor, referenciando ao tema geral que pertencem.</string>
+    <string name="carregando">CARREGANDO...</string>
 
 </resources>
