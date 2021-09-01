@@ -9,11 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReneguideV0">
-        <activity
-            android:name=".PdfActivity"
-            android:exported="true"
-            android:label="@string/title_activity_pdf"
-            android:theme="@style/Theme.ReneguideV0.NoActionBar" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +23,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".Tela_Pdf">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Tela_Sobre">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Tela_Help">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
