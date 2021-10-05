@@ -12,8 +12,8 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navicard"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp"
-        android:background="@drawable/round_shape"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/round_shape_top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

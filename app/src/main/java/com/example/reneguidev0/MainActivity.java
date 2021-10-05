@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#9679;"));
-            dots[i].setTextSize(10);
+            dots[i].setTextSize(25);
             layout.addView(dots[i]);
         }
 

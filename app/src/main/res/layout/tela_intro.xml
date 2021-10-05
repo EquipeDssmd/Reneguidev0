@@ -5,12 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/image_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_500sdp"
-        android:layout_centerHorizontal="true">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dots_container"
+       >
 
     </androidx.viewpager2.widget.ViewPager2>
 
@@ -18,8 +23,11 @@
         android:id="@+id/dots_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/image_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bt_iniciar"
+        android:layout_marginBottom="@dimen/_50sdp"
         android:layout_centerHorizontal="true"
+        app:layout_constraintTop_toBottomOf="@id/image_container"
         android:layout_marginTop="@dimen/_12sdp"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="horizontal" />
@@ -28,9 +36,12 @@
         android:id="@+id/bt_iniciar"
         android:layout_width="@dimen/_200sdp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_50sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/_50sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/round_shape"
         android:fontFamily="@font/montserrat_bold"
         android:gravity="center_horizontal|center_vertical"
@@ -38,4 +49,5 @@
         android:textColor="@color/auxiliar_2"
         android:textSize="@dimen/_12ssp"
         />
+</androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

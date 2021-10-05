@@ -53,7 +53,7 @@ public class Tela_Inicial  extends AppCompatActivity {
 
         // recyclerview dos conteúdos
         recyclerview = findViewById(R.id.recycleview);
-        recyclerview.setHasFixedSize(true);
+        recyclerview.setHasFixedSize(false);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
 
         // recyclerview dos conteúdos da pesquisa
@@ -62,9 +62,10 @@ public class Tela_Inicial  extends AppCompatActivity {
 
 
 
-        recycler_search_view.setLayoutManager(new GridLayoutManager(this, 2));
+
         storage = FirebaseFirestore.getInstance();
         fetchData();
+
 
 
 
@@ -95,7 +96,6 @@ public class Tela_Inicial  extends AppCompatActivity {
         });
 
 
-
     }
 
     SearchView.OnQueryTextListener queryTextListener= new SearchView.OnQueryTextListener(){
@@ -107,6 +107,7 @@ public class Tela_Inicial  extends AppCompatActivity {
 
         @Override
         public boolean onQueryTextChange(String newText) {
+            recycler_search_view.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
             search_adapter.getFilter().filter(newText);
             return true;
         }
@@ -123,6 +124,8 @@ public class Tela_Inicial  extends AppCompatActivity {
             }
             allArticlesList.addAll(contentList.get(i).getArticles());
         }
+
+
         adapter = new ContentRecyclerAdapter(this, contentList);
         search_adapter = new ArticleSearchRecyclerAdapter(this, allArticlesList);
         recyclerview.setAdapter(adapter);

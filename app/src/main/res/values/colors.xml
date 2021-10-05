@@ -5,12 +5,15 @@
     <color name="text_color_2">#332718</color>
     <color name="text_color_3">#0C0C1A</color>
     <color name="text_color_4">#141F22</color>
+    <color name="text_branco">#FFFFFF</color>
     <color name="cat_1">#FF817A</color>
     <color name="cat_2">#FDBF6F</color>
     <color name="cat_3">#7F7FE5</color>
     <color name="cat_4">#82CCDD</color>
     <color name="auxiliar_1">#373A36</color>
     <color name="auxiliar_2">#ECECEC</color>
+    <color name="branco_puro">#FFFFFF</color>
+
 
 
 
