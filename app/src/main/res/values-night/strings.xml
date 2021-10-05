@@ -56,4 +56,5 @@
     <string name="pesquisa">Pesquisa</string>
     <string name="howtosearch_text">Na barra de pesquisa, localizada no topo da tela, é possível fazer uma busca rápida por conteúdos do seu interesse. Para facilitar a busca os subtemas relacionados são apresentados em blocos de mesma cor, referenciando ao tema geral que pertencem.</string>
     <string name="carregando">CARREGANDO...</string>
+    <string name="buscar">Buscar</string>
 </resources>
